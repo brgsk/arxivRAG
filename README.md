@@ -2,7 +2,7 @@
 ## 🚧 WIP - Work in Progress 🚧
 
 ## Description
-`arxivrag` is a Python project designed to parse and process RSS feeds from arXiv using the `feedparser` library.
+`arxivrag` is a RAG system that uses the [arXiv](https://arxiv.org/) dataset as its knowledge base. We'll see how it goes.
 
 ## Installation
 To install the dependencies, use [Poetry](https://python-poetry.org/):
