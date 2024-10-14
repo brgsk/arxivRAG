@@ -1,5 +1,5 @@
 """
-Shamelessly stolen from @arxiv-sanity-preserver (sorry Andrej).
+Shamelessly stolen from arxiv-sanity-preserver (sorry Andrej)
 Utils for dealing with arxiv API and related processing.
 """
 
@@ -16,8 +16,8 @@ def get_response(search_query, start_index=0):
     # fetch raw response
     base_url = 'http://export.arxiv.org/api/query?'
     add_url = 'search_query=%s&sortBy=lastUpdatedDate&start=%d&max_results=100' % (search_query, start_index)
-    #add_url = 'search_query=%s&sortBy=submittedDate&start=%d&max_results=100' % (search_query, start_index)
     search_query = base_url + add_url
+    search_query = search_query.replace(' ', '%20') # replace spaces with %20 for url query string compatibility
     logger.debug(f"Searching arxiv for {search_query}")
     with urllib.request.urlopen(search_query) as url:
         response = url.read()
